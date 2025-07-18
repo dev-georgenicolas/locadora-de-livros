@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de Livros</title>
     <link rel="stylesheet" href="books.css">
+    <link rel="stylesheet" href="modal.css">
 </head>
+
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h2>Adicionar Livro</h2>
+        <form id="userForm">
+            <input type="text" id="titulo" placeholder="Título" required>
+            <input type="text" id="autor" placeholder="Autor" required>
+            <input type="text" id="isbn" placeholder="ISBN" required>
+            <input type="text" id="genero" placeholder="Gênero" required>
+            <input type="number" id="copias" placeholder="Cópias" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
 
 <body>
     <header>
@@ -90,20 +106,37 @@
         </ul>
     </nav>
     <main>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
+        <h1>Livros</h1>
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Pesquisar">
+            </div>
+            <div class="add">
+                <button id="openModalBtn">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>ISBN</th>
+                        <th>Gênero</th>
+                        <th>Cópias</th>
+                        <th class="center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+
+        </div>
+        </div>
     </main>
+    <script src="books.js"></script>
 
 </body>
 

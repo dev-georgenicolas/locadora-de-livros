@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de Livros</title>
     <link rel="stylesheet" href="publishers.css">
+    <link rel="stylesheet" href="modal.css">
 </head>
+
+<div id="userModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h2>Adicionar Editora</h2>
+        <form id="userForm">
+            <input type="text" id="nome" placeholder="Nome" required>
+            <input type="text" id="email" placeholder="Email" required>
+            <input type="text" id="endereco" placeholder="Endereço" required>
+            <input type="text" id="site" placeholder="Site" required>
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
 
 <body>
     <header>
@@ -90,20 +105,36 @@
         </ul>
     </nav>
     <main>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
-        <div class="container"><h3>Livros em Estoque</h3><span>420</span></div>
+        <h1>Editoras</h1>
+        <div class="top-bar">
+            <div class="search">
+                <input type="text" class="search-input" placeholder="Pesquisar">
+            </div>
+            <div class="add">
+                <button id="openModalBtn">Adicionar</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Endereço</th>
+                        <th>Site</th>
+                        <th class="center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+
+        </div>
+        </div>
     </main>
+    <script src="publishers.js"></script>
 
 </body>
 
