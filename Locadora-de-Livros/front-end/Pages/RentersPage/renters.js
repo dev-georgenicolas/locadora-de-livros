@@ -1,10 +1,3 @@
-document.getElementById("openModalBtn").addEventListener("click", function () {
-    document.getElementById("userModal").style.display = "flex";
-});
-
-document.getElementById("closeModalBtn").addEventListener("click", function () {
-    document.getElementById("userModal").style.display = "none";
-});
 
 class Locatario {
     constructor() {
@@ -60,22 +53,23 @@ class Locatario {
     
 }
 
-function limpar(){
-
-    document.getElementById('nome').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('endereco').value = '';
-    document.getElementById('telefone').value = '';
-        
-    
-}
 
 const locatario = new Locatario();
+
+document.getElementById("openModalBtn").addEventListener("click", function () {
+    document.getElementById("userModal").style.display = "flex";
+});
+
+document.getElementById("closeModalBtn").addEventListener("click", function () {
+    document.getElementById("userModal").style.display = "none";
+    document.getElementById("userForm").reset(); 
+});
 
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("userModal");
     if (event.target === modal) {
         modal.style.display = "none";
+        document.getElementById("userForm").reset();
     }
 });
 
@@ -83,6 +77,5 @@ document.getElementById("userForm").addEventListener("submit", function (event) 
     event.preventDefault();
     locatario.salvar();
     document.getElementById("userForm").reset();
-    limpar();
     document.getElementById("userModal").style.display = "none";
 });
