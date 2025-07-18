@@ -6,64 +6,64 @@ document.getElementById("closeModalBtn").addEventListener("click", function () {
     document.getElementById("userModal").style.display = "none";
 });
 
-class Livro {
+
+class Aluguel {
     constructor() {
         this.id = 1;
-        this.arrayLivros = [];
+        this.arrayAlugueis = [];
     }
 
     salvar() {
-        const livro = this.lerDados();
-        this.adicionar(livro);
+        let user = this.lerDados();
+        this.adiconar(user);
         this.listaTabela();
     }
 
-    adicionar(livro) {
-        this.arrayLivros.push(livro);
+    adiconar(aluguel) {
+        this.arrayAlugueis.push(aluguel);
         this.id++;
     }
 
     lerDados() {
-        let livro = {};
-        livro.id = this.id;
-        livro.titulo = document.getElementById('titulo').value;
-        livro.autor = document.getElementById('autor').value;
-        livro.isbn = document.getElementById('isbn').value;
-        livro.genero = document.getElementById('genero').value;
-        livro.copias = document.getElementById('copias').value;
-        return livro;
+        let user = {}
+
+        user.nome = document.getElementById('nome').value;
+        user.livro = document.getElementById('livro').value;
+        user.data = document.getElementById('data').value;
+        user.status = document.getElementById('status').value;
+
+        return user;
     }
 
     listaTabela() {
         let tbody = document.getElementById('tbody');
-        tbody.innerHTML = '';
+        tbody.innerText = '';
 
-        for (let i = 0; i < this.arrayLivros.length; i++) {
+        for (let i = 0; i < this.arrayAlugueis.length; i++) {
             let tr = tbody.insertRow();
 
-            let td_titulo = tr.insertCell();
-            let td_autor = tr.insertCell();
-            let td_isbn = tr.insertCell();
-            let td_genero = tr.insertCell();
-            let td_copias = tr.insertCell();
+            let td_nome = tr.insertCell();
+            let td_livro = tr.insertCell();
+            let td_data = tr.insertCell();
+            let td_status = tr.insertCell();
             let td_acao = tr.insertCell();
 
-            td_titulo.innerText = this.arrayLivros[i].titulo;
-            td_autor.innerText = this.arrayLivros[i].autor;
-            td_isbn.innerText = this.arrayLivros[i].isbn;
-            td_genero.innerText = this.arrayLivros[i].genero;
-            td_copias.innerText = this.arrayLivros[i].copias;
+            td_nome.innerText = this.arrayAlugueis[i].nome;
+            td_livro.innerText = this.arrayAlugueis[i].livro;
+            td_data.innerText = this.arrayAlugueis[i].data;
+            td_status.innerText = this.arrayAlugueis[i].status;
             td_acao.classList.add('center');
 
-            td_acao.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
-                    <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/>
-                </svg>`;
+            td_acao.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h357l-80 80H200v560h560v-278l80-80v358q0 33-23.5 56.5T760-120H200Zm280-360ZM360-360v-170l367-367q12-12 27-18t30-6q16 0 30.5 6t26.5 18l56 57q11 12 17 26.5t6 29.5q0 15-5.5 29.5T897-728L530-360H360Zm481-424-56-56 56 56ZM440-440h56l232-232-28-28-29-28-231 231v57Zm260-260-29-28 29 28 28 28-28-28Z"/></svg>`;
         }
     }
+
+
 }
 
-const livro = new Livro();
+var user = new Aluguel();
+
+
 
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("userModal");
@@ -74,7 +74,11 @@ window.addEventListener("click", function (event) {
 
 document.getElementById("userForm").addEventListener("submit", function (event) {
     event.preventDefault();
-    livro.salvar();
-    document.getElementById("userForm").reset();
+
+    user.salvar()
+
     document.getElementById("userModal").style.display = "none";
+    document.getElementById("userForm").reset();
 });
+
+

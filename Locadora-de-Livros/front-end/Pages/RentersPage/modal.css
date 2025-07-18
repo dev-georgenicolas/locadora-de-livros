@@ -47,6 +47,10 @@
     font-size: 14px;
 }
 
+.modal-content input::-webkit-inner-spin-button, .modal-content input::-webkit-outer-spin-button{
+    display: none;
+} 
+
 
 .modal-content button[type="submit"] {
     background: #006666;
