@@ -1,11 +1,3 @@
-document.getElementById("openModalBtn").addEventListener("click", function () {
-    document.getElementById("userModal").style.display = "flex";
-});
-
-document.getElementById("closeModalBtn").addEventListener("click", function () {
-    document.getElementById("userModal").style.display = "none";
-});
-
 class Livro {
     constructor() {
         this.id = 1;
@@ -65,16 +57,26 @@ class Livro {
 
 const livro = new Livro();
 
+document.getElementById("openModalBtn").addEventListener("click", function () {
+    document.getElementById("userModal").style.display = "flex";
+});
+
+document.getElementById("closeModalBtn").addEventListener("click", function () {
+    document.getElementById("userModal").style.display = "none";
+    document.getElementById("userForm").reset(); 
+});
+
 window.addEventListener("click", function (event) {
     const modal = document.getElementById("userModal");
     if (event.target === modal) {
         modal.style.display = "none";
+        document.getElementById("userForm").reset();
     }
 });
 
 document.getElementById("userForm").addEventListener("submit", function (event) {
     event.preventDefault();
-    livro.salvar();
+    locatario.salvar();
     document.getElementById("userForm").reset();
     document.getElementById("userModal").style.display = "none";
 });
