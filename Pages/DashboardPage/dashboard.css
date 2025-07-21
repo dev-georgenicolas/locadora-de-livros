@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+:root {
+  --header-bg-clr: #1e1e1ef2;
+  --base-clr: #006666;
+  --secondary-clr: #546f71;
+  --card-bg-clr: #ffffff;
+  --sidebar-bg-clr: #2f2f2f;
+  --text-primary-clr: #ffffff;
+  --text-scd-clr: #000000;
+  --text-muted-clr: #bdbdbd;
+  --hover-clr: #ffffff1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--sidebar-bg-clr);
+  color: var(--text-primary-clr);
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+header {
+  grid-area: header;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--header-bg-clr);
+}
+
+#sidebar {
+  background-color: var(--sidebar-bg-clr);
+  grid-area: sidebar;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 15rem;
+  padding-top: 2rem;
+  position: sticky;
+  top: 0;
+  align-self: start;
+}
+
+#sidebar ul {
+  list-style: none;
+}
+
+#sidebar a {
+  height: 4rem;
+  text-decoration: none;
+  padding: 1rem;
+  color: var(--text-primary-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+#sidebar a:hover {
+  background: var(--hover-clr);
+  border-radius: 1rem;
+}
+
+#sidebar ul li.active a {
+  color: var(--base-clr);
+}
+
+#sidebar ul li.active a svg {
+  fill: var(--base-clr);
+}
+
+#sidebar ul li#logout-button {
+  margin-top: 3rem;
+}
+
+main {
+  grid-area: main;
+  padding: 1rem;
+  background-color: var(--secondary-clr);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 0.1fr);
+  gap: 1rem;
+}
+
+
+.card {
+  background-color: var(--card-bg-clr);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: var(--text-scd-clr);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-scd-clr);
+  font-size: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #4f6161;
+  padding: 0.5rem 0;
+}
+.stat-item:first-of-type {
+  padding-top: 0;
+}
+.stat-item:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.stat-item p {
+  font-size: 0.9rem;
+  color: var(--text-scd-clr);
+}
+.stat-item span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+
+.chart #returnsChart{
+  height: auto;
+}
+
+.table-card {
+  grid-column: span 2;
+}
+.table-card .table-content .table-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #4f6161;
+  font-size: 0.9rem;
+}
+.table-card .table-content .table-row.header {
+  font-weight: 600;
+  color: var(--text-scd-clr);
+  border-bottom: 2px solid #5d7373;
+}
+.table-card .table-content .table-row:last-child {
+  border-bottom: none;
+}
+
+.most-rented-card {
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+.most-rented-card .content {
+  margin: auto 0;
+}
+.most-rented-card .book-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.most-rented-card .book-author {
+  color: var(--text-scd-clr);
+  margin-bottom: 1.5rem;
+}
+.most-rented-card .rent-count {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+.top-rented-card .top-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+.top-rented-card .top-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.top-rented-card .top-item span:first-child {
+  font-weight: 600;
+  color: var(--text-scd-clr);
+}
+.top-rented-card .top-item span:last-child {
+  font-weight: 600;
+}
