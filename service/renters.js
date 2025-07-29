@@ -50,11 +50,34 @@ class Locatario {
         }
     }
 
-    
+    popularLocatarios() {
+        const locatarios = [
+            { nome: "Ana Clara", email: "ana@gmail.com", endereco: "Rua das Flores, 123", telefone: "(11) 98888-1234" },
+            { nome: "Carlos Silva", email: "carlos@gmail.com", endereco: "Av. Brasil, 456", telefone: "(21) 97777-5678" },
+            { nome: "Beatriz Souza", email: "bia@gmail.com", endereco: "Rua Verde, 789", telefone: "(31) 96666-9101" },
+            { nome: "João Pedro", email: "joao@gmail.com", endereco: "Travessa Azul, 321", telefone: "(41) 95555-1112" },
+            { nome: "Marina Oliveira", email: "marina@gmail.com", endereco: "Alameda Sol, 654", telefone: "(51) 94444-1314" },
+            { nome: "Felipe Gomes", email: "felipe@gmail.com", endereco: "Rua Nova, 987", telefone: "(61) 93333-1516" },
+            { nome: "Larissa Lima", email: "larissa@gmail.com", endereco: "Av. Central, 852", telefone: "(71) 92222-1718" },
+            { nome: "Lucas Ferreira", email: "lucas@gmail.com", endereco: "Rua do Porto, 741", telefone: "(81) 91111-1920" },
+            { nome: "Juliana Costa", email: "juliana@gmail.com", endereco: "Rua Esperança, 369", telefone: "(91) 90000-2122" },
+            { nome: "Bruno Rocha", email: "bruno@gmail.com", endereco: "Travessa das Árvores, 159", telefone: "(85) 98888-2324" }
+        ];
+
+        locatarios.forEach(loc => this.adicionar(loc));
+        this.listaTabela();
+    }
+
+
+
 }
 
 
 const locatario = new Locatario();
+
+window.addEventListener("DOMContentLoaded", () => {
+    locatario.popularLocatarios();
+});
 
 document.getElementById("openModalBtn").addEventListener("click", function () {
     document.getElementById("userModal").style.display = "flex";
@@ -62,7 +85,7 @@ document.getElementById("openModalBtn").addEventListener("click", function () {
 
 document.getElementById("closeModalBtn").addEventListener("click", function () {
     document.getElementById("userModal").style.display = "none";
-    document.getElementById("userForm").reset(); 
+    document.getElementById("userForm").reset();
 });
 
 window.addEventListener("click", function (event) {

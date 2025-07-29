@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../service/login.js"></script>
 </head>
 <body>
     <div class="container">
@@ -14,7 +16,7 @@
                 <img src="../../assets/login-img.jpg" alt="login-img">
             </div>
             <div class="login-form">
-                <form action="../DashboardPage/dashboard.html" id="login-form">
+                <form action="#" id="login-form">
                     <div class="login-tittle">
                         <h1>Login</h1>
                     </div>
@@ -29,7 +31,7 @@
                         </div>
                         
                         <div class="login-button">
-                            <button id="login-button" >Entrar</button>
+                            <button id="login-button" onclick="getToken(); return false">Entrar</button>
                         </div>                            
                         
                     </div>

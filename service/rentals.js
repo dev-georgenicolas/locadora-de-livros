@@ -49,10 +49,37 @@ class Aluguel {
         }
     }
 
+    popularAlugueis() {
+    const alugueis = [
+        { nome: "Ana Clara", livro: "Dom Casmurro", data: "2025-07-01", status: "Ativo" },
+        { nome: "Carlos Silva", livro: "1984", data: "2025-07-02", status: "Atrasado" },
+        { nome: "Beatriz Souza", livro: "O Pequeno Príncipe", data: "2025-07-03", status: "Entregue" },
+        { nome: "João Pedro", livro: "A Revolução dos Bichos", data: "2025-07-04", status: "Ativo" },
+        { nome: "Marina Oliveira", livro: "Harry Potter", data: "2025-07-05", status: "Entregue" },
+        { nome: "Lucas Mendes", livro: "Percy Jackson", data: "2025-07-06", status: "Atrasado" },
+        { nome: "Isabela Lima", livro: "O Hobbit", data: "2025-07-07", status: "Ativo" },
+        { nome: "Rafael Costa", livro: "Capitães da Areia", data: "2025-07-08", status: "Entregue" },
+        { nome: "Gabriela Rocha", livro: "A Cabana", data: "2025-07-09", status: "Atrasado" },
+        { nome: "Bruno Almeida", livro: "O Alquimista", data: "2025-07-10", status: "Ativo" }
+    ];
+
+    alugueis.forEach((aluguel) => {
+        this.adiconar(aluguel);
+    });
+
+    this.listaTabela();
+}
+
+
 
 }
 
 var aluguel = new Aluguel();
+
+window.addEventListener("DOMContentLoaded", () => {
+    aluguel.popularAlugueis();
+});
+
 
 document.getElementById("openModalBtn").addEventListener("click", function () {
     document.getElementById("userModal").style.display = "flex";

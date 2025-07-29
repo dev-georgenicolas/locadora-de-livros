@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --header-bg-clr: #1e1e1ef2;
+    --sidebar-bg-clr: #2f2f2f;
+    --text-primary-clr: #ffffff;
+    --text-scd-clr: #000000;
+    --text-muted-clr: #bdbdbd;
+    --hover-clr: #ffffff1a;
+    --base-clr: #006666;
+    --secondary-clr: #546F71;
+    --other-clr: #2F2F2F;
+    --background-clr: #262626;
+    --text-clr: #000000;
+    --secondary-txt-clr: #FFFFFF;
+    --tables-bg-clr: #FFFFFF;
+    --hover-clr: #ffffff0a;
+}
+
+.poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--background-clr);
+    color: var(--secondary-txt-clr);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--secondary-clr);
+    padding: min(30px, 7%);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header {
+    width: 100vw;
+    padding: 0.7rem;
+    text-align: center;
+    display: flex;
+    position: sticky;
+    left: 0;
+}
+
+.tittle-locadora {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 6rem;
+    position: static;
+    margin-left: 2rem;
+}
+
+.content-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+#sidebar {
+    background-color: var(--sidebar-bg-clr);
+    width: 15rem;
+    min-height: 100vh;
+    padding-top: 2rem;
+    position: sticky;
+    top: 0;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: var(--text-primary-clr);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1rem;
+}
+
+#sidebar a:hover {
+    background: var(--hover-clr);
+    border-radius: 1rem;
+}
+
+#sidebar ul li.active a {
+    color: var(--base-clr);
+
+    svg {
+        fill: var(--base-clr);
+    }
+}
+
+#sidebar ul li#logout-button {
+    margin-top: 3rem;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search input {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 300px;
+
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.container {
+    border-radius: 1rem 1rem 0.5rem 0.5rem;
+    color: var(--text-clr);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    background-color: var(--tables-bg-clr);
+    border-radius: 0;
+    border-collapse: collapse;
+    text-align: left;
+    min-height: 7rem;
+    overflow: hidden;
+}
+
+table th {
+    text-align: left;
+    background-color: #6E6E6E;
+    padding: 0.5rem;
+    color: #FFFFFF;
+}
+
+table td {
+    background-color: var(--tables-bg-clr);
+    text-align: left;
+    padding: 0.5rem;
+    color: #000000;
+}
+
+table td.center,
+table th.center {
+    text-align: center;
+}
+
+
+table td svg {
+    fill: #000000;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 0.2rem;
+    padding: 6px 12px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #205f5f;
+    color: white;
+    font-weight: bold;
+}
+
+
+
+@media(max-width: 600px) {
+    .content-box {
+        grid-template-columns: 1fr;
+    }
+
+    header img {
+        display: none;
+    }
+
+    main {
+        width: 100vw;
+        height: 100vh;
+        padding: 2em 1em 60px;
+    }
+
+
+    .container {
+        border: none;
+        padding: 0;
+
+    }
+
+
+
+    #sidebar {
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid var(--base-clr);
+        padding: 0;
+        position: fixed;
+        top: unset;
+        bottom: 0;
+
+        ul {
+            padding: 0;
+            display: grid;
+            grid-auto-columns: 60px;
+            grid-auto-flow: column;
+            /* align-items: center; */
+            overflow-y: scroll;
+        }
+
+        ul li span {
+            display: none;
+        }
+
+
+    }
+
+
+}
