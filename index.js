@@ -9,7 +9,7 @@ async function getToken() {
             password: "12345678"
         });
 
-        console.log(response.data); // Aqui vai o token e outros dados
+        console.log(response.data);
     } catch (error) {
         console.error("Erro ao obter token:", error.response?.data || error.message);
     }

@@ -54,6 +54,7 @@ class Livro {
             td_copias.innerText = livro.copias;
 
             td_acao.classList.add('center');
+            td_acao.classList.add('hover');
             td_copias.classList.add('center');
             td_genero.classList.add('center');
 
@@ -165,3 +166,30 @@ document.getElementById("userForm").addEventListener("submit", function (event) 
     document.getElementById("userForm").reset();
     document.getElementById("userModal").style.display = "none";
 });
+
+const searchbar = document.getElementById('searchbar');
+const tabela = document.getElementById('tbody')
+
+function search() {
+    termo = searchbar.value.toLowerCase()
+    termo.toLowerCase();
+    let linhas = tabela.getElementsByTagName('tr');
+
+    for(let i in linhas){
+        if(true === isNaN(i)){
+            continue
+        }
+        
+        let conteudo = linhas[i].innerHTML.toLocaleLowerCase();
+
+        if(true === conteudo.includes(termo) ){
+            linhas[i].style.display = ''
+
+        }
+        else{
+            linhas[i].style.display = 'none'
+        }
+        
+    }
+    
+}

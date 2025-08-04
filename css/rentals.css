@@ -94,14 +94,14 @@ header img {
 }
 
 #sidebar a {
-    height: 4rem;
-    text-decoration: none;
-    padding: 1rem;
-    color: var(--secondary-txt-clr);
-    display: flex;
-    align-items: center;
-    gap: 1em;
+  text-decoration: none;
+  color: var(--text-primary-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1rem;
 }
+
 
 #sidebar a:hover {
     background: var(--hover-clr);

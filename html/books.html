@@ -14,12 +14,17 @@
         <span class="close-btn" id="closeModalBtn">&times;</span>
         <h2>Adicionar Livro</h2>
         <form id="userForm">
-            <input type="text" id="titulo" placeholder="Título" required>
-            <input type="text" id="autor" placeholder="Autor" required>
-            <input type="text" id="isbn" placeholder="ISBN" required>
-            <input type="text" id="genero" placeholder="Gênero" required>
-            <input type="number" id="copias" placeholder="Cópias" required>
-            <button type="submit">Salvar</button>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" required>
+            <label for="Autor">Autor</label>
+            <input type="text" id="autor" required>
+            <label for="isnb">ISBN</label>
+            <input type="text" id="isbn" required>
+            <label for="genero">Gênero</label>
+            <input type="text" id="genero" required>
+            <label for="copias">Cópias</label>
+            <input type="number" id="copias" required>
+            <button id="save-button">Salvar</button>
         </form>
     </div>
 </div>
@@ -113,7 +118,7 @@
             <h1>Livros</h1>
             <div class="top-bar">
                 <div class="search">
-                    <input type="text" class="search-input" placeholder="Pesquisar">
+                    <input type="text" class="search-input" id="searchbar" placeholder="Pesquisar" onkeyup="search()">
                 </div>
                 <div class="add">
                     <button id="openModalBtn">Adicionar</button>

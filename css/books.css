@@ -150,31 +150,6 @@ header img {
 }
 
 
-table {
-    table-layout: fixed;
-    width: 100%;
-    background-color: var(--tables-bg-clr);
-    border-radius: 0;
-    border-collapse: collapse;
-    text-align: left;
-    min-height: 7rem;
-    overflow: hidden;
-}
-
-table th {
-    text-align: left;
-    background-color: #6E6E6E;
-    padding: 0.5rem;
-    color: #FFFFFF;
-}
-
-table td {
-    background-color: var(--tables-bg-clr);
-    text-align: left;
-    padding: 0.5rem;
-    color: #000000;
-}
-
 table td.center,
 table th.center {
     text-align: center;
@@ -245,7 +220,6 @@ table td svg {
             display: grid;
             grid-auto-columns: 60px;
             grid-auto-flow: column;
-            /* align-items: center; */
             overflow-y: scroll;
         }
 

@@ -16,16 +16,17 @@
         <span class="close-btn" id="closeModalBtn">&times;</span>
         <h2>Adicionar Usuário</h2>
         <form id="userForm">
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="senha" placeholder="Senha" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
             <label for="permissao">Permissão:</label>
             <select id="permissao" required>
                 <option value="Editor">Editor</option>
                 <option value="Leitor">Leitor</option>
             </select>
 
-            <button type="submit">Salvar</button>
+            <button id="save-button">Salvar</button>
         </form>
     </div>
 </div>
@@ -119,7 +120,7 @@
             <h1>Usuarios</h1>
             <div class="top-bar">
                 <div class="search">
-                    <input type="text" class="search-input" placeholder="Pesquisar">
+                    <input type="text" class="search-input" id="searchbar" placeholder="Pesquisar" onkeyup="search()" >
                 </div>
                 <div class="add">
                     <button id="openModalBtn">Adicionar</button>
@@ -131,7 +132,6 @@
                         <tr>
                             <th>Nome</th>
                             <th>Email</th=>
-                            <th>Senha</th=>
                             <th class="center">Nível de Permissão</th=>
                             <th class="center">Ações</th=>
                         </tr>
@@ -141,7 +141,8 @@
                     </tbody>
                 </table>
             </div>
-            </div>
+
+            <div id="paginacao" class="pagination"></div>
         </main>
     </div>
     <script src="../service/user.js"></script>

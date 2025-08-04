@@ -18,7 +18,7 @@
             <input type="email" id="email" placeholder="Email" required>
             <input type="number" id="telefone" placeholder="Telefone" required>
             <input type="text" id="endereco" placeholder="Endereço" required>
-            <button type="submit">Salvar</button>
+            <button id="save-button">Salvar</button>
         </form>
     </div>
 </div>
@@ -112,7 +112,7 @@
             <h1>Locatários</h1>
             <div class="top-bar">
                 <div class="search">
-                    <input type="text" class="search-input" placeholder="Pesquisar">
+                    <input type="text" class="search-input" id="searchbar" placeholder="Pesquisar" onkeyup="search()" >
                 </div>
                 <div class="add">
                     <button id="openModalBtn">Adicionar</button>
@@ -133,7 +133,7 @@
                     </tbody>
                 </table>
             </div>
-            </div>
+            <div id="paginacao" class="pagination"></div>
         </main>
     </div>
     <script src="../service/renters.js"></script>

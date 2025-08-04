@@ -7,21 +7,29 @@
     <title>Locadora de Livros</title>
     <link rel="stylesheet" href="../css/publishers.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 
 <div id="userModal" class="modal">
     <div class="modal-content">
         <span class="close-btn" id="closeModalBtn">&times;</span>
-        <h2>Adicionar Editora</h2>
+        <h2 id="modalTitle">Adicionar Editora</h2>
         <form id="userForm">
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="text" id="email" placeholder="Email" required>
-            <input type="text" id="endereco" placeholder="Endereço" required>
-            <input type="text" id="site" placeholder="Site" required>
-            <button type="submit">Salvar</button>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" required autocomplete="email">
+            <label for="telephone">Telefone</label>
+            <input type="text" id="telephone" required>
+            <label for="site">Site</label>
+            <input type="text" id="site">
+            <button id="save-button">Salvar</button>
         </form>
     </div>
 </div>
+
+
 
 <body>
     <header>
@@ -112,7 +120,7 @@
             <h1>Editoras</h1>
             <div class="top-bar">
                 <div class="search">
-                    <input type="text" class="search-input" placeholder="Pesquisar">
+                    <input type="text" class="search-input" id="searchbar" placeholder="Pesquisar" onkeyup="search()" >
                 </div>
                 <div class="add">
                     <button id="openModalBtn">Adicionar</button>
@@ -124,8 +132,8 @@
                         <tr>
                             <th>Nome</th>
                             <th>Email</th>
-                            <th>Endereço</th>
-                            <th>Site</th>
+                            <th>Telefone</th>
+                            <th class="center">Site</th>
                             <th class="center">Ações</th>
                         </tr>
                     </thead>

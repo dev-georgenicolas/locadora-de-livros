@@ -24,7 +24,7 @@
                 <option value="Atrasado">Atrasado</option>
                 <option value="Devolvido">Devolvido</option>
             </select>
-            <button type="submit">Salvar</button>
+            <button id="save-button">Salvar</button>
         </form>
     </div>
 </div>
@@ -119,7 +119,7 @@
             <h1>Aluguéis</h1>
             <div class="top-bar">
                 <div class="search">
-                    <input type="text" class="search-input" placeholder="Pesquisar">
+                    <input type="text" class="search-input" id="searchbar" placeholder="Pesquisar" onkeyup="search()" >
                 </div>
                 <div class="add">
                     <button id="openModalBtn">Adicionar</button>
@@ -140,7 +140,7 @@
                     </tbody>
                 </table>
             </div>
-            </div>
+            <div id="paginacao" class="pagination"></div>
         </main>
     </div>
     <script src="../service/rentals.js"></script>

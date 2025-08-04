@@ -37,6 +37,7 @@
 }
 
 .modal-content input, .modal-content select {
+    outline: none;
     width: 100%;
     padding: 10px 14px;
     margin: 10px 0;
@@ -48,7 +49,7 @@
 }
 
 
-.modal-content button[type="submit"] {
+.modal-content button#save-button {
     background: #006666;
     color: white;
     border: none;
@@ -61,7 +62,7 @@
     display: block;
 }
 
-.modal-content button[type="submit"]:hover {
+.modal-content button#save-button:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -106,3 +107,63 @@ button#adicionar-btn:active, #openModalBtn:active {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 0.2rem;
+    padding: 6px 12px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #205f5f;
+    color: white;
+    font-weight: bold;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    background-color: var(--tables-bg-clr);
+    border-radius: 0;
+    border-collapse: collapse;
+    text-align: left;
+    min-height: 7rem;
+    overflow: hidden;
+}
+
+table th {
+    text-align: left;
+    background-color: #6E6E6E;
+    padding: 0.5rem 1rem;
+    color: #FFFFFF;
+}
+
+table td {
+    background-color: var(--tables-bg-clr);
+    text-align: left;
+    padding: 0.5rem 1rem;
+    color: #000000;
+}
+
+table td.center,
+table th.center {
+    text-align: center;
+}
+
+
+table td svg {
+    fill: #000000;
+}
+
+table td.hover svg:hover{
+    border-radius: 0.5rem;
+
+    background-color: #6e6e6e33;
+
+}
