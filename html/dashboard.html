@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Locadora de Livros</title>
   <link rel="stylesheet" href="../css/dashboard.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="../css/main.css">
+  
 </head>
 
 <body>
@@ -88,144 +89,16 @@
       </ul>
     </nav>
     <main>
-      <div class="card">
-        <div class="stat-item">
-          <p>Livros em Estoque</p>
-          <span>420</span>
-        </div>
-        <div class="stat-item">
-          <p>Livros Emprestados</p>
-          <span>120</span>
-        </div>
-        <div class="stat-item">
-          <p>Livros Atrasados</p>
-          <span>34</span>
-        </div>
-        <div class="stat-item">
-          <p>Livros devolvidos essa semana</p>
-          <span>23</span>
-        </div>
-      </div>
-      <div class="card">
-        <div class="stat-item">
-          <p>Total de Livros</p>
-          <span>540</span>
-        </div>
-        <div class="stat-item">
-          <p>Número de Locatários</p>
-          <span>254</span>
-        </div>
-        <div class="stat-item">
-          <p>Locatários com aluguéis ativos</p>
-          <span>56</span>
-        </div>
-        <div class="stat-item">
-          <p>Número de Editoras</p>
-          <span>163</span>
-        </div>
-      </div>
-      <div class="card chart-card">
-        <h3>Livros devolvidos</h3>
-        <div class="chart-area">
-          <canvas id="returnsChart" width="auto" height="auto"></canvas>
-        </div>
-      </div>
-      <div class="card chart-card">
-        <h3>Quantidade de aluguéis por usuário</h3>
-        <div class="chart-area">
-          <canvas id="rentalsChart" width="auto" height="auto"></canvas>
-        </div>
-      </div>
-      <div class="card table-card">
-        <h3>Quantidade de livros emprestados por usuário</h3>
-        <div class="table-content">
-          <div class="table-row header">
-            <span>Usuário</span><span>Emprestados</span>
-          </div>
-          <div class="table-row"><span>Ana</span><span>54</span></div>
-          <div class="table-row"><span>Carlos</span><span>32</span></div>
-          <div class="table-row"><span>João</span><span>23</span></div>
-        </div>
-      </div>
-      <div class="card most-rented-card">
-        <h3>Livro mais alugado</h3>
-        <div class="content">
-          <p class="book-title">1984</p>
-          <p class="book-author">George Orwell</p>
-          <p class="rent-count">25 vezes</p>
-        </div>
-      </div>
-      <div class="card top-rented-card">
-        <h3>Top livros mais alugados</h3>
-        <div class="top-list">
-          <div class="top-item">
-            <span>1º</span>
-            <span>1984</span>
-            <span>25</span>
-          </div>
-          <div class="top-item">
-            <span>2º</span>
-            <span>Harry Potter</span>
-            <span>19</span>
-          </div>
-          <div class="top-item">
-            <span>3º</span>
-            <span>Hobbit</span>
-            <span>14</span>
+        <div class="container">
+          <div class="card">
+            Teste
           </div>
         </div>
-      </div>
     </main>
   </div>
 
-  <script>
-    const returnsChart = document.getElementById('returnsChart');
-
-
-    new Chart(returnsChart, {
-      type: 'bar',
-      data: {
-        labels: ['Atrasados', 'Dentro do Prazo'],
-        datasets: [{
-          label: '',
-          data: [76, 46],
-          borderWidth: 1,
-          backgroundColor: '#006666'
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    const rentalsChart = document.getElementById('rentalsChart');
-
-    new Chart(rentalsChart, {
-      type: 'pie',
-      data: {
-        labels: ['Ana', 'Carlos', 'João'],
-        datasets: [{
-          label: '',
-          data: [20, 15, 10],
-          borderWidth: 1,
-          backgroundColor: ['#006666', '#008888', '#004344']
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../service/dashboard.js"></script>  
 </body>
 
 </html>

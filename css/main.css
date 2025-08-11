@@ -1,3 +1,58 @@
+:root {
+    --base-clr: #006666;
+    --secondary-clr: #546F71;
+    --other-clr: #2F2F2F;
+    --background-clr: #262626;
+    --text-clr: #000000;
+    --secondary-txt-clr: #FFFFFF;
+    --tables-bg-clr: #FFFFFF;
+    --hover-clr: #ffffff0a;
+}
+
+
+#sidebar {
+    background-color: var(--other-clr);
+    box-sizing: border-box;
+    height: 100vh;
+    width: 10.5rem;
+    padding-top: 2rem;
+    position: stick;
+    top: 0;
+    align-self: start;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+
+#sidebar ul li.active a {
+    color: var(--base-clr);
+
+    svg {
+        fill: var(--base-clr);
+    }
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: var(--text-primary-clr);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 1rem;
+}
+
+
+#sidebar a:hover {
+    background: var(--hover-clr);
+    border-radius: 1rem;
+}
+
+#sidebar ul li#logout-button {
+    margin-top: 3rem;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -90,8 +145,8 @@ button#adicionar-btn, #openModalBtn {
     color: white;
     border: none;
     border-radius: 12px;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -147,13 +202,19 @@ table th {
 table td {
     background-color: var(--tables-bg-clr);
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     color: #000000;
+    font-size: 0.9rem;
 }
 
 table td.center,
 table th.center {
     text-align: center;
+}
+
+table td.right,
+table th.right {
+    text-align: right;
 }
 
 
@@ -167,3 +228,107 @@ table td.hover svg:hover{
     background-color: #6e6e6e33;
 
 }
+
+
+
+header {
+    width: 100vw;
+    padding: 0.7rem;
+    text-align: center;
+    display: flex;
+    position: sticky;
+    left: 0;
+}
+
+.tittle-locadora {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header img {
+    width: 6rem;
+    position: static;
+    margin-left: 2rem;
+}
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    td::before {
+        content: attr(data-label); /* pega rótulo da coluna */
+        font-weight: bold;
+    }
+
+    .content-box{
+        grid-template-columns: 1fr;
+    }
+
+    header{
+        display: none;
+    }
+
+    main {
+        width: 100vw;
+        height: 100vh;
+        padding: 2em 1em 60px;
+    }
+
+
+    .container {
+        border: none;
+        padding: 0;
+
+    }
+
+
+
+    #sidebar {
+        display: flex;
+        /* align-items: center; */
+        height: 60px;
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid var(--base-clr);
+        padding: 0;
+        position: fixed;
+        top: unset;
+        bottom: 0;
+
+        ul{
+            padding: 0;
+            display: grid;
+            grid-auto-columns: 60px;
+            grid-auto-flow: column;
+            overflow-y: scroll;
+        }
+
+        ul li span {
+            display: none;
+        }
+
+
+    }
+}
+

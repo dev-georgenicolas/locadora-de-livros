@@ -130,6 +130,18 @@ main {
   grid-column: span 2;
 }
 
+.chart-area {
+  width: 30rem;
+  height: 300px;
+  /* altura fixa */
+}
+
+.chart-area canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
 .table-row {
   display: flex;
   justify-content: space-between;
@@ -139,7 +151,8 @@ main {
 }
 
 .table-content {
-  max-height: 150px; /* ou menos, tipo 100px */
+  max-height: 150px;
+  /* ou menos, tipo 100px */
   overflow-y: auto;
 }
 
