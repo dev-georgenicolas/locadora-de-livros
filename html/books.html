@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locadora de Livros</title>
+    <link rel="icon" href="../assets/book.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/books.css">
     <link rel="stylesheet" href="../css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <div id="userModal" class="modal">
@@ -16,12 +18,8 @@
         <form id="userForm">
             <label for="titulo">Título</label>
             <input type="text" id="titulo" required>
-            <label for="Autor">Autor</label>
+            <label for="autor">Autor</label>
             <input type="text" id="autor" required>
-            <label for="isnb">ISBN</label>
-            <input type="text" id="isbn" required>
-            <label for="genero">Gênero</label>
-            <input type="text" id="genero" required>
             <label for="copias">Cópias</label>
             <input type="number" id="copias" required>
             <button id="save-button">Salvar</button>
@@ -32,7 +30,7 @@
 <body>
     <header>
         <div>
-            <img src="../../assets/wda-logo.png" alt="">
+            <img src="../assets/wda-logo.png" alt="">
         </div>
         <div class="tittle-locadora">
             <h1>Locadora de Livros</h1>
@@ -125,26 +123,39 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container pc">
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 180px;">Título</th>
-                            <th style="width: 120px;">Autor</th>
-                            <th style="width: 100px;">ISBN</th>
-                            <th class="center" style="width: 100px;">Gênero</th>
-                            <th class="center" style="width: 80px;">Cópias</th>
-                            <th class="center" style="width: 60px;">Ações</th>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th class="center" >Cópias</th>
+                            <th class="center">Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="tbody">
+                    <tbody id="tbody-pc">
 
                     </tbody>
                 </table>
 
             </div>
+            <div id="paginacao" class="pagination pc"></div>
+            <div class="container mobile">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Autor</th>
+                            <th class="center">Cópias</th>
+                            <th class="center">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-mobile">
 
-            <div id="paginacao" class="pagination"></div>
+                    </tbody>
+                </table>
+
+            </div>
         </main>
     </div>
 

@@ -17,7 +17,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
   font-family: "Poppins", sans-serif;
+}
+
+
+html.dashboard,
+body.dashboard {
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
 
 body {
@@ -65,212 +74,142 @@ header img {
   min-height: 0;
 }
 
-#sidebar {
-  background-color: var(--sidebar-bg-clr);
-  width: 15rem;
-  min-height: 100vh;
-  padding-top: 2rem;
-  position: sticky;
-  top: 0;
-}
-
-#sidebar ul {
-  list-style: none;
-}
-
-#sidebar a {
-  text-decoration: none;
-  color: var(--text-primary-clr);
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  padding: 1rem;
-}
-
-#sidebar a:hover {
-  background: var(--hover-clr);
-  border-radius: 1rem;
-}
-
-#sidebar ul li.active a {
-  color: var(--base-clr);
-
-  svg {
-    fill: var(--base-clr);
-  }
-}
-
-#sidebar ul li#logout-button {
-  margin-top: 3rem;
-}
-
 main {
   flex: 1;
   padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
   background-color: var(--secondary-clr);
 }
 
-.card {
-  background-color: var(--card-bg-clr);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-width: 0;
+.main-container {
+  overflow-y: auto;
+  padding: 20px 20px;
 }
 
-.table-card,
-.chart-card,
-.most-rented-card,
-.top-rented-card {
-  grid-column: span 2;
-}
-
-.chart-area {
-  width: 30rem;
-  height: 300px;
-  /* altura fixa */
-}
-
-.chart-area canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-
-.table-row {
+.main-title {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #4f6161;
-  padding: 0.4rem 0;
-  font-size: 0.85rem;
 }
 
-.table-content {
-  max-height: 150px;
-  /* ou menos, tipo 100px */
-  overflow-y: auto;
+.main-title>h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d3;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
 }
 
 
-.table-row.header {
-  font-weight: bold;
-  border-bottom: 2px solid #5d7373;
+.card>span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-inner>p {
+  font-size: 18px;
+}
+
+.card-inner>span {
+  font-size: 35px;
+}
+
+.charts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.charts-card {
+  width: 100%;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  border-radius: 5px;
+  box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+#pie-chart,
+#bar-chart {
+  width: 100%;
+  max-width: 100%;
+  z-index: 0;
 }
 
 
-@media(max-width: 1024px) {
 
-  .table-card,
-  .chart-card,
-  .most-rented-card,
-  .top-rented-card {
-    grid-column: span 1;
+@media (max-width: 1024px) {
+  body.dashboard{
+        background-color: var(--secondary-clr);
+
   }
 
-  .content-box {
+  .main-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts {
     grid-template-columns: 1fr;
   }
-
-  header {
-    display: none;
-  }
-
-  main {
-    width: 100vw;
-    height: 100vh;
-    padding: 2em 1em 60px;
-  }
-
-  .container {
-    border: none;
-    padding: 0;
-
-  }
-
 }
 
-@media(max-width: 768px) {
-
-  body {
-    background-color: var(--secondary-clr);
+@media (max-width: 768px) {
+  .main-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
 
-
-  .tittle-locadora {
-    justify-content: center;
+  .charts-card {
+    padding: 15px;
   }
 
-  .content-box {
+  .chart-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 539px) {
+  .main-cards {
     grid-template-columns: 1fr;
-  }
-
-  header {
-    display: none;
-  }
-
-  main {
-    width: 100vw;
-    height: 100vh;
-    padding: 2em 1em 60px;
-  }
-
-  .container {
-    border: none;
-    padding: 0;
-
-  }
-
-  #sidebar {
-    height: 60px;
-    width: 100%;
-    min-height: unset;
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-    top: unset;
-    border-top: 1px solid var(--base-clr);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #sidebar ul {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 60px;
-    overflow-x: auto;
-  }
-
-  #sidebar ul li span {
-    display: none;
-  }
-
-}
-
-@media(max-width: 480px) {
-
-  main {
-    width: 100vw;
-    height: 100vh;
-    padding: 2em 1em 60px;
   }
 
   .card {
-    padding: 1rem;
+    padding: 0.8rem;
   }
 
-  .table-row span {
-    font-size: 0.85rem;
+  .charts {
+    grid-template-columns: 1fr;
   }
-
-  .top-rented-card .top-item,
-  .table-card .table-content .table-row {
-    font-size: 0.9rem;
-  }
-
 }

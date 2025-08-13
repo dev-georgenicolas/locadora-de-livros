@@ -48,27 +48,7 @@ main {
     gap: 2rem;
 }
 
-header {
-    width: 100vw;
-    padding: 0.7rem;
-    text-align: center;
-    display: flex;
-    position: sticky;
-    left: 0;
-}
 
-.tittle-locadora {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-header img {
-    width: 6rem;
-    position: static;
-    margin-left: 2rem;
-}
 
 .content-box {
     display: grid;
